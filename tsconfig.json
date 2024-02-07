@@ -3,6 +3,11 @@
   "compilerOptions": {
     "strict": true,
     "noImplicitAny": true,
-    "alwaysStrict": true
+    "alwaysStrict": true,
+    "paths": {
+      "~/*": [
+        "src/*"
+      ]
+    }
   }
 }

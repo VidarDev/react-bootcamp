@@ -1,28 +1,26 @@
+import { StyleSheet } from "react-native";
+import { View } from "react-native";
 import { Text } from "react-native-paper";
-import React from "react";
-import styled from "styled-components/native";
 
-const Header = () => {
+export const Header = ({ title }: { title: string }) => {
     return (
-        <HeaderContainer>
-            <HeaderTitle variant="headlineLarge">SpaceCraft</HeaderTitle>
-        </HeaderContainer>
+        <View style={styles.header}>
+            <Text variant="displayMedium" style={styles.title}>{title}</Text>
+        </View>
     );
-};
+}
 
-const HeaderContainer = styled.View`
-    background-color: #6650a4;
-    width: 100%;
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`;
-
-const HeaderTitle = styled(Text)`
-    font-weight: 800;
-    color: #fff;
-    text-transform: uppercase;
-`;
-
-export default Header;
+const styles = StyleSheet.create({
+    header: {
+        height: "33%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#6650a4",
+    },
+    title: {
+        color: "#fff",
+        fontWeight: "800",
+        textTransform: "uppercase",
+    },
+});

@@ -1,13 +1,22 @@
-import { ScrollView } from "react-native";
-import { LoginScreen } from "./src/screens";
-import { PaperProvider } from "react-native-paper";
+import { Provider as PaperProvider } from "react-native-paper";
+import Login from "./src/screens/Login";
+import Terms from "./src/screens/Terms";
+import StarshipFeed from "./src/screens/StarshipFeed";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { NetworkProvider } from 'react-native-offline';
 
 export default function App() {
+  const queryClient = new QueryClient()
+
   return (
-      <PaperProvider>
-        <LoginScreen/>
-        <ScrollView>
-        </ScrollView>
-      </PaperProvider>
+    <NetworkProvider>
+      <QueryClientProvider client={queryClient}>
+        <PaperProvider>
+           <Login />
+           {/*<Terms />*/}
+          {/*<StarshipFeed />*/}
+        </PaperProvider>
+      </QueryClientProvider>
+    </NetworkProvider >
   );
-};
+}
