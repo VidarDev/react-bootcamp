@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { View, FlatList, SafeAreaView, StyleSheet } from "react-native";
 import { Text } from "react-native-paper";
-import { Container } from "~/components/Container";
-import StarshipCard, { Starship } from "~/components/StarshipCard";
+import { ScreenContainer } from "~/components/ScreenContainer";
+import Card, { Starship } from "~/components/Card";
 import { useStarships } from "~/hooks/useStarships";
 
 export default function StarshipFeed() {
@@ -15,19 +15,19 @@ export default function StarshipFeed() {
 
     return (
         <SafeAreaView>
-            <Container title="List of Starships">
+            <ScreenContainer title="List of Starships">
                 {
                     isLoading || starships.length <= 0
                         ? <LoadingLayout />
                         : isError
                             ? <ErrorLayout />
                             : <FlatList data={starships}
-                                renderItem={({ item }) => <StarshipCard item={item} />}
+                                renderItem={({ item }) => <Card item={item} />}
                                 keyExtractor={item => item.name}
                                 ItemSeparatorComponent={() => <View style={{ height: 24 }} />}
                             />
                 }
-            </Container>
+            </ScreenContainer>
         </SafeAreaView>
     );
 };

@@ -10,7 +10,7 @@ interface ContainerProps {
     withSeparatorFooter?: boolean;
 }
 
-export const Container = ({
+export const ScreenContainer = ({
     title,
     children,
 }: ContainerProps) => {

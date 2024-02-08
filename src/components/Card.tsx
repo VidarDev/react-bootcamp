@@ -10,7 +10,7 @@ export type Starship = {
     hyperdrive_rating: string;
 }
 
-export default function StarshipCard({ item }: { item: Starship }) {
+export default function Card({ item }: { item: Starship }) {
     const image = useImage(item.name);
     return (
         <Card style={styles.card}>

@@ -20,7 +20,7 @@ export default function Login() {
               icon={visiblePassword ? "eye" : "eye-off"}
             />
           } />
-          <Button mode='contained'>Connexion</Button>
+          <Button style={styles.button} mode='contained'>Connexion</Button>
           <Pressable><Text variant="bodySmall" style={styles.text}>Read Terms and conditions</Text></Pressable>
         </KeyboardAvoidingView>
       </View>
@@ -47,5 +47,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "rgba(0, 0, 0, 0.5)",
     textDecorationLine: "underline",
+  },
+  button: {
+    marginHorizontal: 16,
   }
 });
