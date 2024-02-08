@@ -5,18 +5,24 @@ import StarshipFeed from "./src/screens/StarshipFeed";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NetworkProvider } from 'react-native-offline';
 
-export default function App() {
+function App() {
   const queryClient = new QueryClient()
 
   return (
     <NetworkProvider>
       <QueryClientProvider client={queryClient}>
         <PaperProvider>
-           <Login />
+           {/*<Login />*/}
            {/*<Terms />*/}
-          {/*<StarshipFeed />*/}
+          <StarshipFeed />
         </PaperProvider>
       </QueryClientProvider>
     </NetworkProvider >
   );
 }
+
+// eslint-disable-next-line import/no-default-export
+// export default App;
+
+// return Storybook's UI
+export { default } from "./.storybook";

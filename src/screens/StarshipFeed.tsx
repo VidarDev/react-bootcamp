@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { View, FlatList, SafeAreaView, StyleSheet } from "react-native";
 import { Text } from "react-native-paper";
 import { ScreenContainer } from "~/components/ScreenContainer";
-import Card, { Starship } from "~/components/Card";
+import CardShip, { Starship } from "~/components/CardShip";
 import { useStarships } from "~/hooks/useStarships";
 
 export default function StarshipFeed() {
@@ -22,7 +22,7 @@ export default function StarshipFeed() {
                         : isError
                             ? <ErrorLayout />
                             : <FlatList data={starships}
-                                renderItem={({ item }) => <Card item={item} />}
+                                renderItem={({ item }) => <CardShip item={item} />}
                                 keyExtractor={item => item.name}
                                 ItemSeparatorComponent={() => <View style={{ height: 24 }} />}
                             />
