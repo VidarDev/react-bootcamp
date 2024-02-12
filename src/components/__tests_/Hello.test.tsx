@@ -1,5 +1,9 @@
 // ./src/utils/hello.test.ts
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 it("works", () => {
-    expect(1).toBe(1);
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  expect(1).toBe(1);
 });

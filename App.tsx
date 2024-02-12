@@ -1,12 +1,13 @@
+import { NetworkProvider } from "react-native-offline";
 import { Provider as PaperProvider } from "react-native-paper";
-import Login from "./src/screens/Login";
-import Terms from "./src/screens/Terms";
-import StarshipFeed from "./src/screens/StarshipFeed";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { NetworkProvider } from 'react-native-offline';
+
+import Login from "./src/screens/Login";
+import StarshipFeed from "./src/screens/StarshipFeed";
+import Terms from "./src/screens/Terms";
 
 function App() {
-  const queryClient = new QueryClient()
+  const queryClient = new QueryClient();
 
   return (
     <NetworkProvider>
@@ -17,11 +18,10 @@ function App() {
           <StarshipFeed />
         </PaperProvider>
       </QueryClientProvider>
-    </NetworkProvider >
+    </NetworkProvider>
   );
 }
 
-// eslint-disable-next-line import/no-default-export
 export default App;
 
 // return Storybook's UI
