@@ -1,26 +1,17 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from "react";
 import {
-  Alert,
   Image,
   SafeAreaView,
   ScrollView,
   StyleSheet,
   View
 } from "react-native";
-import { Appbar, Text } from "react-native-paper";
+import { Text } from "react-native-paper";
 
-export default function Terms() {
-  function goBack() {
-    Alert.alert("You pressed the back button!");
-  }
-
+export default function TermsScreen({ navigation }) {
   return (
-    <>
-      <Appbar.Header>
-        <Appbar.BackAction onPress={goBack} />
-        <Appbar.Content title="Terms and Conditions" />
-      </Appbar.Header>
+    <View>
       <ScrollView>
         <View style={styles.container}>
           <Text variant="bodyMedium">
@@ -112,7 +103,7 @@ export default function Terms() {
         </View>
       </ScrollView>
       <SafeAreaView />
-    </>
+    </View>
   );
 }
 

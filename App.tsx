@@ -2,9 +2,7 @@ import { NetworkProvider } from "react-native-offline";
 import { Provider as PaperProvider } from "react-native-paper";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import Login from "./src/screens/Login";
-import StarshipFeed from "./src/screens/StarshipFeed";
-import Terms from "./src/screens/Terms";
+import Navigator from "~/navigation/Navigator";
 
 function App() {
   const queryClient = new QueryClient();
@@ -13,9 +11,10 @@ function App() {
     <NetworkProvider>
       <QueryClientProvider client={queryClient}>
         <PaperProvider>
-           {/*<Login />*/}
-           {/*<Terms />*/}
-          <StarshipFeed />
+          <Navigator />
+          {/* <Login />*/}
+          {/* <Terms />*/}
+          {/*<StarshipFeed />*/}
         </PaperProvider>
       </QueryClientProvider>
     </NetworkProvider>

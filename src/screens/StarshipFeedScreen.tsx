@@ -3,10 +3,10 @@ import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
 import { Text } from "react-native-paper";
 
 import CardShip, { Starship } from "~/components/CardShip";
-import { ScreenContainer } from "~/components/ScreenContainer";
+import { ContainerScreen } from "~/components/ContainerScreen";
 import { useStarships } from "~/hooks/useStarships";
 
-export default function StarshipFeed() {
+export default function StarshipFeedScreen({ navigation }) {
   const [starships, setStarships] = React.useState<Starship[]>([]);
   const { data, isError, isLoading } = useStarships();
 
@@ -16,7 +16,7 @@ export default function StarshipFeed() {
 
   return (
     <SafeAreaView>
-      <ScreenContainer title="List of Starships">
+      <ContainerScreen title="List of Starships">
         {isLoading || starships.length <= 0 ? (
           <LoadingLayout />
         ) : isError ? (
@@ -29,7 +29,7 @@ export default function StarshipFeed() {
             ItemSeparatorComponent={() => <View style={{ height: 24 }} />}
           />
         )}
-      </ScreenContainer>
+      </ContainerScreen>
     </SafeAreaView>
   );
 }

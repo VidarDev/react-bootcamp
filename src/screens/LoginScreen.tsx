@@ -10,8 +10,9 @@ import { Text } from "react-native-paper";
 import { Button, TextInput } from "react-native-paper";
 
 import { Header } from "~/components/Header";
+import { Routes } from "~/navigation/Routes";
 
-export default function Login() {
+export default function LoginScreen({ navigation }) {
   const [visiblePassword, setVisiblePassword] = useState(false);
 
   return (
@@ -40,7 +41,7 @@ export default function Login() {
           >
             Connexion
           </Button>
-          <Pressable>
+          <Pressable onPress={() => console.log(Routes.TERMS_SCREEN)}>
             <Text
               variant="bodySmall"
               style={styles.text}

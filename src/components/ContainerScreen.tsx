@@ -12,10 +12,7 @@ interface ContainerProps {
   withSeparatorFooter?: boolean;
 }
 
-export const ScreenContainer = ({
-    title,
-    children,
-}: ContainerProps) => {
+export const ContainerScreen = ({ title, children }: ContainerProps) => {
   return (
     <>
       <Offline></Offline>
