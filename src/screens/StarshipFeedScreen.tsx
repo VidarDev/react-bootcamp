@@ -6,7 +6,7 @@ import CardShip, { Starship } from "~/components/CardShip";
 import { ContainerScreen } from "~/components/ContainerScreen";
 import { useStarships } from "~/hooks/useStarships";
 
-export default function StarshipFeedScreen({ navigation }) {
+export default function StarshipFeedScreen() {
   const [starships, setStarships] = React.useState<Starship[]>([]);
   const { data, isError, isLoading } = useStarships();
 

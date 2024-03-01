@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Routes } from "~/navigation/Routes";
 import LoginScreen from "~/screens/LoginScreen";
 import TermsScreen from "~/screens/TermsScreen";
+import StarshipFeedScreen from "~/screens/StarshipFeedScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,13 @@ const Navigator = () => {
         <Stack.Screen
           name={Routes.TERMS_SCREEN}
           component={TermsScreen}
+          options={{
+            headerShown: true
+          }}
+        />
+        <Stack.Screen
+          name={Routes.STARSHIP_FEED_SCREEN}
+          component={StarshipFeedScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

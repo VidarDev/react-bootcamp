@@ -38,10 +38,11 @@ export default function LoginScreen({ navigation }) {
           <Button
             style={styles.button}
             mode="contained"
+            onPress={() => navigation.navigate(Routes.STARSHIP_FEED_SCREEN)}
           >
             Connexion
           </Button>
-          <Pressable onPress={() => console.log(Routes.TERMS_SCREEN)}>
+          <Pressable onPress={() => navigation.navigate(Routes.TERMS_SCREEN)}>
             <Text
               variant="bodySmall"
               style={styles.text}
