@@ -1,6 +1,7 @@
 // @ts-ignore
+import React from "react";
 import { StyleSheet } from "react-native";
-import { Card } from "react-native-paper";
+import { Card, Text } from "react-native-paper";
 
 import { useImage } from "~/hooks/useImage";
 
@@ -8,7 +9,7 @@ export interface Starship {
   name: string;
   model: string;
   cost_in_credits: string;
-  crew: string;
+  manufacturer: string;
   hyperdrive_rating: string;
 }
 

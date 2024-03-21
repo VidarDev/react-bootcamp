@@ -11,9 +11,11 @@ import { Button, TextInput } from "react-native-paper";
 
 import { Header } from "~/components/Header";
 import { Routes } from "~/navigation/Routes";
+import { useAuthContext } from "~/context/AuthContext";
 
-export default function LoginScreen({ navigation }) {
+export default function LoginScreen({ navigation }: { navigation: any }) {
   const [visiblePassword, setVisiblePassword] = useState(false);
+  const { toggleIsSignedIn } = useAuthContext();
 
   return (
     <>
@@ -38,6 +40,7 @@ export default function LoginScreen({ navigation }) {
           <Button
             style={styles.button}
             mode="contained"
+            // onPress={() => toggleIsSignedIn()}
             onPress={() => navigation.navigate(Routes.STARSHIP_FEED_SCREEN)}
           >
             Connexion

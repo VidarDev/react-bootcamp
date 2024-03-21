@@ -1,12 +1,19 @@
 import React, { useEffect } from "react";
-import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
+import {
+  FlatList,
+  Pressable,
+  SafeAreaView,
+  StyleSheet,
+  View
+} from "react-native";
 import { Text } from "react-native-paper";
 
 import CardShip, { Starship } from "~/components/CardShip";
 import { ContainerScreen } from "~/components/ContainerScreen";
 import { useStarships } from "~/hooks/useStarships";
+import { Routes } from "~/navigation/Routes";
 
-export default function StarshipFeedScreen() {
+export default function StarshipFeedScreen({ navigation }: { navigation: any }) {
   const [starships, setStarships] = React.useState<Starship[]>([]);
   const { data, isError, isLoading } = useStarships();
 
@@ -24,9 +31,25 @@ export default function StarshipFeedScreen() {
         ) : (
           <FlatList
             data={starships}
-            renderItem={({ item }) => <CardShip item={item} />}
             keyExtractor={(item) => item.name}
             ItemSeparatorComponent={() => <View style={{ height: 24 }} />}
+            renderItem={({ item }) => {
+              return (
+                <Pressable
+                  onPress={() => {
+                    navigation.navigate(Routes.STARSHIP_DETAIL_SCREEN, {
+                      name: item.name,
+                      manufacturer: item.manufacturer,
+                      model: item.model,
+                      cost_in_credits: item.cost_in_credits,
+                      hyperdrive_rating: item.hyperdrive_rating
+                    });
+                  }}
+                >
+                  <CardShip item={item} />
+                </Pressable>
+              );
+            }}
           />
         )}
       </ContainerScreen>

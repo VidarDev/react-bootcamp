@@ -9,9 +9,9 @@ import {
 } from "react-native";
 import { Text } from "react-native-paper";
 
-export default function TermsScreen({ navigation }) {
+export default function TermsScreen({ navigation }: { navigation: any }) {
   return (
-    <View>
+    <SafeAreaView>
       <ScrollView>
         <View style={styles.container}>
           <Text variant="bodyMedium">
@@ -102,8 +102,7 @@ export default function TermsScreen({ navigation }) {
           <Text>May the force be with you</Text>
         </View>
       </ScrollView>
-      <SafeAreaView />
-    </View>
+    </SafeAreaView>
   );
 }
 
